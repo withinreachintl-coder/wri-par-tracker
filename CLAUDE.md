@@ -9,9 +9,14 @@
 | Cream interior | `#FAFAF9` |
 | Error/shortfall | `#EF4444` |
 | Border | `#E5E0D8` |
-| Muted text (on dark only) | `#A8A29E` |
 
-**Rule: All text rendered on cream (#FAFAF9) or white (#FFFFFF) backgrounds MUST be #1C1917 or darker. Never use light gray / muted text on cream.**
+### Contrast Rule (applies to ALL surfaces)
+
+- **On dark (#1C1917):** primary text = `#F5F0E8` or `#FAFAF9` (cream/near-white). Never gray.
+- **On cream (#FAFAF9) or white (#FFFFFF):** all text = `#1C1917` or darker. No light gray, no muted variants.
+- **Secondary / supporting text:** use amber (`#D97706`) or reduce size — never reduce contrast.
+- **Banned:** `text-gray-400`, `text-gray-500`, `opacity-60`, `color: '#A8A29E'` on dark, or any equivalent muted treatment that lowers readability.
+- The WRI aesthetic is high-contrast and confident. If text looks like a placeholder, it's wrong.
 
 ### Typography
 - **Headings:** Playfair Display (serif) — `font-playfair` / `var(--font-playfair)`
@@ -30,6 +35,7 @@
 - RLS: Non-recursive. SELECT policies use `auth.uid() = id` or `owner_email = auth.email()` — never subquery-through-users for SELECT.
 - PIN validation: Server-side only via API routes using service role. Never trust client.
 - New user flow: /auth/callback → create org + user (service role) → redirect to /setup. Returning user → /check.
+- **Styling: Inline styles throughout.** Tailwind PostCSS is bypassed (see backlog). Do not use Tailwind utility classes — they will not apply. All styling must use inline `style={{}}` props.
 
 ---
 
@@ -56,6 +62,7 @@
 1. **Index on shift_check_items.par_item_id** — needed for per-item time-series queries (e.g., "show all Chicken Breast counts over 30 days"). Not needed for v1.
 2. **Harden set_updated_at() trigger** — add `SET search_path = public` or `SECURITY DEFINER` to clear Supabase linter warning.
 3. **submitted_by field on shift_checks** — PIN submission audit trail. Ship v1 without it; add when managers need to trace disputes.
+4. **Fix Tailwind PostCSS config (known workaround)** — `postcss.config.mjs` was removed to resolve a build failure with Next.js 14. Tailwind is installed but not running through PostCSS — utility classes do nothing. All styling currently uses inline styles as an intentional workaround (same pattern as wri-tip-pool). Fix by either: (a) installing correct PostCSS config for Next.js 14 + Tailwind v3, or (b) migrating to Tailwind v4 which uses a different CSS-based config. Do not mix Tailwind classes and inline styles until this is resolved.
 
 ---
 
