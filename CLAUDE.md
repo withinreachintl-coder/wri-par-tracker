@@ -72,3 +72,21 @@
 - No secrets in `.env.example` — placeholders only
 - `node_modules/` never committed
 - Any deviation from approved plan is flagged BEFORE the change, not after
+
+## Agent Commit Process Rule
+
+**Frontend repos (Next.js/TypeScript) require a verified build before any commit.**
+
+The GitHub API commit path does NOT run npm run build. JSX/TSX files with encoding
+issues, raw Unicode, or syntax errors will commit silently and fail on Vercel.
+
+Required process for any file change in this repo:
+1. Write the file to /opt/wri-par-tracker/ on the VPS
+2. Run: cd /opt/wri-par-tracker && npm run build
+3. Verify exit code 0 and no compile errors
+4. ONLY THEN commit via API or git push
+
+This applies to: app/**, lib/**, any .tsx/.ts file.
+It does NOT apply to: PROGRESS.md, CLAUDE.md, README.md (docs only, no compile step).
+
+Applies equally to: wri-restaurant-ops, wri-staff-comms, wri-suite-landing, wri-par-tracker.
