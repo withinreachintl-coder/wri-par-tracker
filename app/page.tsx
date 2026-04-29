@@ -32,12 +32,12 @@ export default function Home() {
           For Restaurant Managers
         </p>
         <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '52px', lineHeight: 1.1, fontWeight: 700, marginBottom: '24px' }}>
-          Stop guessing what's{' '}
+          Stop guessing what&apos;s{' '}
           <span style={{ color: '#D97706' }}>running low.</span>
         </h1>
         <p style={{ fontSize: '18px', color: '#A8A29E', lineHeight: 1.6, marginBottom: '40px', maxWidth: '560px' }}>
           Staff enter par counts in 60 seconds using a PIN — no login, no app install.
-          If anything's below par, your manager gets an email alert instantly.
+          If anything&apos;s below par, your manager gets an email alert instantly.
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <a href="/login" style={{
@@ -97,7 +97,7 @@ export default function Home() {
           ].map(item => (
             <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '12px' }}>✓ {item}</p>
           ))}
-          <a href="https://buy.stripe.com/cNieVcdFL0gJaYL1Ml9k40f" target="_blank" rel="noopener noreferrer" style={
+          <a href="https://buy.stripe.com/cNieVcdFL0gJaYL1Ml9k40f" target="_blank" rel="noopener noreferrer" style={{
             display: 'block', textAlign: 'center', marginTop: '32px',
             background: '#D97706', padding: '14px', borderRadius: '8px',
             color: '#fff', textDecoration: 'none', fontSize: '15px', fontWeight: 600
@@ -108,7 +108,7 @@ export default function Home() {
       {/* CTA */}
       <section style={{ padding: '80px 24px', textAlign: 'center', maxWidth: '768px', margin: '0 auto' }}>
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '16px' }}>
-          Ready to know what's on the shelf?
+          Ready to know what&apos;s on the shelf?
         </h2>
         <p style={{ color: '#A8A29E', fontSize: '16px', marginBottom: '32px' }}>
           Start your free trial. No credit card. Cancel anytime.
