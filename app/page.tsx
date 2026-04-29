@@ -19,13 +19,10 @@ export default function Home() {
           }}>&#x2713;</div>
           <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>Par Tracker</span>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-          <a href="https://wireach.tools" style={{ color: '#F5F0E8', textDecoration: 'none', fontSize: '15px' }}>All Tools</a>
-          <a href="/login" style={{
-            border: '1px solid #F5F0E8', padding: '8px 20px',
-            borderRadius: '6px', color: '#F5F0E8', textDecoration: 'none', fontSize: '15px'
-          }}>Sign In</a>
-        </div>
+        <a href="/login" style={{
+          border: '1px solid #F5F0E8', padding: '8px 20px',
+          borderRadius: '6px', color: '#F5F0E8', textDecoration: 'none', fontSize: '15px'
+        }}>Sign In</a>
       </nav>
 
       {/* Hero */}
@@ -33,7 +30,7 @@ export default function Home() {
         <p style={{ color: '#D97706', fontSize: '12px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '24px' }}>
           For Restaurant Managers
         </p>
-        <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '52px', lineHeight: 1.1, fontWeight: 700, marginBottom: '24px' }}>
+        <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(32px, 7vw, 52px)', lineHeight: 1.1, fontWeight: 700, marginBottom: '24px' }}>
           Stop guessing what&apos;s{' '}
           <span style={{ color: '#D97706' }}>running low.</span>
         </h1>
