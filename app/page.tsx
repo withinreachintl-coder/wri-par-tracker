@@ -16,7 +16,7 @@ export default function Home() {
             width: '32px', height: '32px', background: '#D97706',
             borderRadius: '6px', display: 'flex', alignItems: 'center',
             justifyContent: 'center', fontSize: '16px', color: '#fff'
-          }}>✓</div>
+          }}>&#x2713;</div>
           <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>Par Tracker</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
@@ -38,7 +38,7 @@ export default function Home() {
           <span style={{ color: '#D97706' }}>running low.</span>
         </h1>
         <p style={{ fontSize: '18px', color: '#A8A29E', lineHeight: 1.6, marginBottom: '40px', maxWidth: '560px' }}>
-          Staff enter par counts in 60 seconds using a PIN — no login, no app install.
+          Staff enter par counts in 60 seconds using a PIN &mdash; no login, no app install.
           If anything&apos;s below par, your manager gets an email alert instantly.
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
@@ -46,7 +46,7 @@ export default function Home() {
             background: '#D97706', color: '#fff', padding: '14px 28px',
             borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '16px'
           }}>Start Free Trial</a>
-          <span style={{ color: '#78716C', fontSize: '14px' }}>No credit card required · $19/mo after trial</span>
+          <span style={{ color: '#78716C', fontSize: '14px' }}>No credit card required &middot; $19/mo after trial</span>
         </div>
       </section>
 
@@ -60,15 +60,15 @@ export default function Home() {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
           {[
-            { icon: '🔑', title: 'PIN-based staff entry', desc: 'No logins, no app downloads. Staff punch in a 4-digit PIN and count what's on the shelf. Done in under a minute.' },
-            { icon: '📊', title: 'Live shortfall preview', desc: 'The count form shows par targets inline. Staff see exactly what's short before they submit — no guessing.' },
-            { icon: '📧', title: 'Instant manager alerts', desc: 'When anything falls below par, an email goes to every manager on the alert list — with the exact item and shortfall amount.' },
+            { icon: '(1)', title: 'PIN-based staff entry', desc: 'No logins, no app downloads. Staff punch in a 4-digit PIN and count what is on the shelf. Done in under a minute.' },
+            { icon: '(2)', title: 'Live shortfall preview', desc: 'The count form shows par targets inline. Staff see exactly what is short before they submit.' },
+            { icon: '(3)', title: 'Instant manager alerts', desc: 'When anything falls below par, an email goes to every manager on the alert list with the exact item and shortfall amount.' },
           ].map((f) => (
             <div key={f.title} style={{ background: '#292524', borderRadius: '12px', padding: '28px' }}>
               <div style={{
                 width: '40px', height: '40px', background: '#1C1917', borderRadius: '8px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '20px', marginBottom: '20px'
+                fontSize: '20px', color: '#D97706', marginBottom: '20px'
               }}>{f.icon}</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 600, marginBottom: '12px' }}>{f.title}</h3>
               <p style={{ color: '#A8A29E', fontSize: '14px', lineHeight: 1.6 }}>{f.desc}</p>
@@ -97,7 +97,7 @@ export default function Home() {
             '30-day check history',
             'Unlimited team members',
           ].map(item => (
-            <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '12px' }}>✓ {item}</p>
+            <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '12px' }}>&#x2713; {item}</p>
           ))}
           <a href="https://buy.stripe.com/cNieVcdFL0gJaYL1Ml9k40f" target="_blank" rel="noopener noreferrer" style={{
             display: 'block', textAlign: 'center', marginTop: '32px',
