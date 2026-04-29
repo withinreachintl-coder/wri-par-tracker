@@ -97,8 +97,7 @@ export default function Home() {
           ].map(item => (
             <p key={item} style={{ color: '#A8A29E', fontSize: '14px', marginBottom: '12px' }}>✓ {item}</p>
           ))}
-          {/* TODO: swap href for Stripe payment link once created */}
-          <a href="/login" style={{
+          <a href="https://buy.stripe.com/cNieVcdFL0gJaYL1Ml9k40f" target="_blank" rel="noopener noreferrer" style={
             display: 'block', textAlign: 'center', marginTop: '32px',
             background: '#D97706', padding: '14px', borderRadius: '8px',
             color: '#fff', textDecoration: 'none', fontSize: '15px', fontWeight: 600

@@ -11,7 +11,7 @@
 | **Repo** | [withinreachintl-coder/wri-par-tracker](https://github.com/withinreachintl-coder/wri-par-tracker) (public) |
 | **Vercel project** | `wri-par-tracker` (team: with-reach-tools) |
 | **Supabase project** | `wri-par-tracker` / ref `ljqhfrmkhypsjpsvnwds` / us-east-2 |
-| **Stripe** | TBD — not wired for billing yet |
+| **Stripe** | `$19/mo` recurring, 14-day trial — [payment link](https://buy.stripe.com/cNieVcdFL0gJaYL1Ml9k40f) |
 | **Resend** | `noreply@wireach.tools` — auth magic link confirmed working |
 
 ---
@@ -44,9 +44,10 @@
 ## Next Priorities (SPEC-0011)
 1. ~~PROGRESS.md~~ ✅ Done (PR #1 merged)
 2. ~~Diagnose + fix shortfall alert email~~ ✅ Done (Vercel env var fix, no PR needed)
-3. Real landing page at `/` (PR #2)
+3. ~~Real landing page at `/`~~ ✅ Done (PR #2, Stripe wired)
 4. Mobile viewport fixes on `/check` (PR #3)
-5. Investigate `SUPABASE_SERVICE_ROLE_KEY` "Needs Attention" warning in Vercel (after 3+4)
+5. Suite landing Par Tracker card — wri-suite-landing (PR #4)
+6. Investigate `SUPABASE_SERVICE_ROLE_KEY` "Needs Attention" warning in Vercel (after 4+5)
 
 ---
 
