@@ -58,18 +58,18 @@ export default function Home() {
         <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '36px', fontWeight: 700, marginBottom: '48px' }}>
           Built for the way restaurants actually run.
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
           {[
-            { icon: '(1)', title: 'PIN-based staff entry', desc: 'No logins, no app downloads. Staff punch in a 4-digit PIN and count what is on the shelf. Done in under a minute.' },
-            { icon: '(2)', title: 'Live shortfall preview', desc: 'The count form shows par targets inline. Staff see exactly what is short before they submit.' },
-            { icon: '(3)', title: 'Instant manager alerts', desc: 'When anything falls below par, an email goes to every manager on the alert list with the exact item and shortfall amount.' },
-          ].map((f) => (
+            { title: 'PIN-based staff entry', desc: 'No logins, no app downloads. Staff punch in a 4-digit PIN and count what is on the shelf. Done in under a minute.' },
+            { title: 'Live shortfall preview', desc: 'The count form shows par targets inline. Staff see exactly what is short before they submit.' },
+            { title: 'Instant manager alerts', desc: 'When anything falls below par, an email goes to every manager on the alert list with the exact item and shortfall amount.' },
+          ].map((f, idx) => (
             <div key={f.title} style={{ background: '#292524', borderRadius: '12px', padding: '28px' }}>
               <div style={{
                 width: '40px', height: '40px', background: '#1C1917', borderRadius: '8px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '20px', color: '#D97706', marginBottom: '20px'
-              }}>{f.icon}</div>
+              }}>{idx + 1}</div>
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 600, marginBottom: '12px' }}>{f.title}</h3>
               <p style={{ color: '#A8A29E', fontSize: '14px', lineHeight: 1.6 }}>{f.desc}</p>
             </div>
