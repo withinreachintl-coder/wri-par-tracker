@@ -28,7 +28,7 @@
 - Resend auth emails deliver correctly
 
 ### ❌ Broken / Not Verified
-1. **Shortfall alert email not delivering** — UI shows "manager has been alerted" but email never arrives. Root cause unconfirmed; diagnosing via Vercel function logs before fix.
+1. ~~**Shortfall alert email not delivering**~~ ✅ FIXED — Root cause: `RESEND_API_KEY` env var in Vercel was malformed/empty (flagged "Needs Attention"). Updated the key in Vercel project settings; Vercel auto-redeployed. Both configured recipients (gmail + hotmail) now receive shortfall alerts with correct sender, subject, table, and note. No code change needed.
 2. **Landing page is placeholder** — `par.wireach.tools` shows "Coming soon" text, not a real product page.
 3. **Mobile viewport not verified** — `/check` flow (the highest-frequency staff-facing surface) has not been tested at iPhone 390px width.
 
@@ -42,10 +42,11 @@
 ---
 
 ## Next Priorities (SPEC-0011)
-1. ~~PROGRESS.md~~ ← this file
-2. Diagnose + fix shortfall alert email (PR #2)
-3. Real landing page at `/` (PR #3)
-4. Mobile viewport fixes on `/check` (PR #4)
+1. ~~PROGRESS.md~~ ✅ Done (PR #1 merged)
+2. ~~Diagnose + fix shortfall alert email~~ ✅ Done (Vercel env var fix, no PR needed)
+3. Real landing page at `/` (PR #2)
+4. Mobile viewport fixes on `/check` (PR #3)
+5. Investigate `SUPABASE_SERVICE_ROLE_KEY` "Needs Attention" warning in Vercel (after 3+4)
 
 ---
 
@@ -57,6 +58,7 @@
 | 2026-04-17 | Day 1 | Auth (`/login` + `/auth/callback`), `/setup` 3-tab, `/check` PIN+count+submit, Resend email alert route, variance display. Build passes. |
 | 2026-04-17 | CLAUDE.md update | Contrast rule tightened to all surfaces; Tailwind PostCSS workaround documented in backlog. |
 | 2026-04-29 | SPEC-0011 planning | Identified 4 problems: alert email, landing page, mobile, PROGRESS.md. Plan approved. |
+| 2026-04-29 | SPEC-0011 execution | PR #1 PROGRESS.md merged. Alert email fix: `RESEND_API_KEY` was malformed in Vercel env — fixed by Keon directly, no code change. Both recipients confirmed receiving alerts. |
 
 ---
 
