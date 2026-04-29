@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Home() {
   return (
     <main style={{ background: '#1C1917', color: '#F5F0E8', fontFamily: 'DM Sans, sans-serif' }}>
