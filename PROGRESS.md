@@ -29,8 +29,8 @@
 
 ### ❌ Broken / Not Verified
 1. ~~**Shortfall alert email not delivering**~~ ✅ FIXED — Root cause: `RESEND_API_KEY` env var in Vercel was malformed/empty (flagged "Needs Attention"). Updated the key in Vercel project settings; Vercel auto-redeployed. Both configured recipients (gmail + hotmail) now receive shortfall alerts with correct sender, subject, table, and note. No code change needed.
-2. **Landing page is placeholder** — `par.wireach.tools` shows "Coming soon" text, not a real product page.
-3. **Mobile viewport not verified** — `/check` flow (the highest-frequency staff-facing surface) has not been tested at iPhone 390px width.
+2. ~~**Landing page is placeholder**~~ ✅ FIXED — Real landing page live at par.wireach.tools (PR #2, Apr 30 2026).
+3. ~~**Mobile viewport not verified**~~ ✅ FIXED — /check verified at 390px iPhone 14 (PR #3, Apr 30 2026).
 
 ---
 
@@ -42,12 +42,12 @@
 ---
 
 ## Next Priorities (SPEC-0011)
-1. ~~PROGRESS.md~~ ✅ Done (PR #1 merged)
-2. ~~Diagnose + fix shortfall alert email~~ ✅ Done (Vercel env var fix, no PR needed)
-3. ~~Real landing page at `/`~~ ✅ Done (PR #2, Stripe wired)
-4. Mobile viewport fixes on `/check` (PR #3)
-5. Suite landing Par Tracker card — wri-suite-landing (PR #4)
-6. Investigate `SUPABASE_SERVICE_ROLE_KEY` "Needs Attention" warning in Vercel (after 4+5)
+1. ~~PROGRESS.md~~ ✅ Done
+2. ~~Shortfall alert email~~ ✅ Verified working Apr 30
+3. ~~Real landing page~~ ✅ Done (PR #2)
+4. ~~Mobile viewport fixes~~ ✅ Done (PR #3)
+5. ~~SPEC-0012: naming + accessibility~~ ✅ Done (PR #4)
+6. SPEC-0013 TBD
 
 ---
 
@@ -60,7 +60,10 @@
 | 2026-04-17 | CLAUDE.md update | Contrast rule tightened to all surfaces; Tailwind PostCSS workaround documented in backlog. |
 | 2026-04-29 | SPEC-0011 planning | Identified 4 problems: alert email, landing page, mobile, PROGRESS.md. Plan approved. |
 | 2026-04-29 | SPEC-0011 execution | PR #1 PROGRESS.md merged. Alert email fix: `RESEND_API_KEY` was malformed in Vercel env — fixed by Keon directly, no code change. Both recipients confirmed receiving alerts. |
+| 2026-04-30 | SPEC-0011 close-out | **Initial PROGRESS.md entry — repo had no prior session history captured here.** PR #3 (mobile /check fixes, e69209c) merged, production deployed 17:36 UTC. PR #2 (landing page at par.wireach.tools, 90691d0) merged 16:39 UTC — Coming soon placeholder retired, Stripe $19/mo trial link wired, mobile-responsive grid + hero font scaling verified at 390px. |
+| 2026-04-30 | SPEC-0012 execution | PR #4 (68d273c) merged 17:18 UTC: (A) nav logo Par Tracker → Par Level Tracker; (D) id+name on all /check and /setup inputs (accessibility). B: shortfall alert email verified working — prior Apr 28 RESEND_API_KEY env var fix had already resolved it; sub-par test delivered to both recipients with correct item table format. C1: magic link auth verified end-to-end from incognito — template clean, allowlist correct, auth healthy. C2: Vercel preview wildcard added to Supabase allowlist by Keon in dashboard. |
+| 2026-04-30 | Process note | Lesson: re-verify OPEN BUG items in PROGRESS.md against production before drafting fix SPECs. Items B and C1 were phantom — prior fixes already resolved them. Check live before spec-ing a fix. |
 
 ---
 
-_Last updated: 2026-04-29_
+_Last updated: 2026-04-30_
