@@ -161,6 +161,8 @@ export default function CheckPage() {
                 value={pin}
                 onChange={e => { setPin(e.target.value.replace(/\D/g, '').slice(0, 4)); setPinError('') }}
                 placeholder="••••"
+                id="pin-entry"
+                name="pin"
                 maxLength={4}
                 autoFocus
                 style={{
@@ -229,6 +231,8 @@ export default function CheckPage() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
                       <input
                         type="number"
+                        id={`count-${item.id}`}
+                        name={`count-${item.id}`}
                         inputMode="decimal"
                         value={counts[item.id]}
                         onChange={e => setCounts(prev => ({ ...prev, [item.id]: e.target.value }))}
