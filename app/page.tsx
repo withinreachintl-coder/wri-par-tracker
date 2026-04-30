@@ -17,7 +17,7 @@ export default function Home() {
             borderRadius: '6px', display: 'flex', alignItems: 'center',
             justifyContent: 'center', fontSize: '16px', color: '#fff'
           }}>&#x2713;</div>
-          <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>Par Tracker</span>
+          <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '18px', fontWeight: 700 }}>Par Level Tracker</span>
         </div>
         <a href="/login" style={{
           border: '1px solid #F5F0E8', padding: '8px 20px',

@@ -193,17 +193,17 @@ export default function SetupPage() {
                 {items.map((item, i) => (
                   <div key={i} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 100px 32px', gap: '8px', alignItems: 'center' }}>
                     <input
-                      type="text" value={item.name} onChange={e => updateItem(i, 'name', e.target.value)} placeholder="Item name (e.g. Chicken Breast)"
+                      id={`item-name-${i}`} name={`item-name-${i}`} type="text" value={item.name} onChange={e => updateItem(i, 'name', e.target.value)} placeholder="Item name (e.g. Chicken Breast)"
                       style={{ fontFamily: 'var(--font-dmsans)', fontSize: '14px', color: '#1C1917', border: '1px solid #E5E0D8', borderRadius: '4px', padding: '9px 12px' }}
                     />
                     <input
-                      type="text" value={item.unit} onChange={e => updateItem(i, 'unit', e.target.value)} placeholder="Unit (lbs, cases)"
+                      id={`item-unit-${i}`} name={`item-unit-${i}`} type="text" value={item.unit} onChange={e => updateItem(i, 'unit', e.target.value)} placeholder="Unit (lbs, cases)"
                       style={{ fontFamily: 'var(--font-dmsans)', fontSize: '14px', color: '#1C1917', border: '1px solid #E5E0D8', borderRadius: '4px', padding: '9px 12px' }}
                     />
                     <div style={{ position: 'relative' }}>
                       <span style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', fontFamily: 'var(--font-dmsans)', fontSize: '12px', color: '#6B5B4E' }}>Par:</span>
                       <input
-                        type="number" value={item.par_minimum || ''} onChange={e => updateItem(i, 'par_minimum', Number(e.target.value))} min={0} step={0.5} placeholder="0"
+                        id={`item-par-${i}`} name={`item-par-${i}`} type="number" value={item.par_minimum || ''} onChange={e => updateItem(i, 'par_minimum', Number(e.target.value))} min={0} step={0.5} placeholder="0"
                         style={{ width: '100%', fontFamily: 'var(--font-dmsans)', fontSize: '14px', color: '#1C1917', border: '1px solid #E5E0D8', borderRadius: '4px', padding: '9px 8px 9px 36px' }}
                       />
                     </div>
@@ -242,14 +242,14 @@ export default function SetupPage() {
                 <div>
                   <label style={{ display: 'block', fontFamily: 'var(--font-dmsans)', fontSize: '13px', fontWeight: 500, color: '#6B5B4E', marginBottom: '6px' }}>PIN</label>
                   <input
-                    type="text" value={pin} onChange={e => setPin(e.target.value.replace(/\D/g, '').slice(0, 4))} placeholder="1234" maxLength={4}
+                    id="pin-new" name="pin-new" type="text" value={pin} onChange={e => setPin(e.target.value.replace(/\D/g, '').slice(0, 4))} placeholder="1234" maxLength={4}
                     style={{ width: '100%', fontFamily: 'var(--font-dmsans)', fontSize: '24px', fontWeight: 700, letterSpacing: '8px', color: '#1C1917', border: '1px solid #E5E0D8', borderRadius: '4px', padding: '12px 16px', textAlign: 'center' as const }}
                   />
                 </div>
                 <div>
                   <label style={{ display: 'block', fontFamily: 'var(--font-dmsans)', fontSize: '13px', fontWeight: 500, color: '#6B5B4E', marginBottom: '6px' }}>Confirm PIN</label>
                   <input
-                    type="text" value={pinConfirm} onChange={e => setPinConfirm(e.target.value.replace(/\D/g, '').slice(0, 4))} placeholder="1234" maxLength={4}
+                    id="pin-confirm" name="pin-confirm" type="text" value={pinConfirm} onChange={e => setPinConfirm(e.target.value.replace(/\D/g, '').slice(0, 4))} placeholder="1234" maxLength={4}
                     style={{ width: '100%', fontFamily: 'var(--font-dmsans)', fontSize: '24px', fontWeight: 700, letterSpacing: '8px', color: '#1C1917', border: `1px solid ${pinConfirm && pin !== pinConfirm ? '#EF4444' : '#E5E0D8'}`, borderRadius: '4px', padding: '12px 16px', textAlign: 'center' as const }}
                   />
                 </div>
