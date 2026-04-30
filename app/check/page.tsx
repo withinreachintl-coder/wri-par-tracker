@@ -219,7 +219,7 @@ export default function CheckPage() {
                       gap: '16px',
                     }}
                   >
-                    <div style={{ flex: 1 }}>
+                    <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontFamily: 'var(--font-dmsans)', fontSize: '15px', fontWeight: 500, color: '#F5F0E8' }}>{item.name}</div>
                       <div style={{ fontFamily: 'var(--font-dmsans)', fontSize: '12px', color: '#D97706', marginTop: '2px' }}>
                         Par: {item.par_minimum} {item.unit}
@@ -237,6 +237,7 @@ export default function CheckPage() {
                         step={0.5}
                         style={{
                           width: '80px',
+                          height: '44px',
                           fontFamily: 'var(--font-dmsans)',
                           fontSize: '18px',
                           fontWeight: 600,
@@ -245,8 +246,11 @@ export default function CheckPage() {
                           background: 'rgba(255,255,255,0.08)',
                           border: `1px solid ${isShort ? '#EF4444' : 'rgba(255,255,255,0.15)'}`,
                           borderRadius: '6px',
-                          padding: '10px 8px',
+                          padding: '0 8px',
                           outline: 'none',
+                          WebkitAppearance: 'none',
+                          MozAppearance: 'textfield',
+                          boxSizing: 'border-box',
                         }}
                       />
                       <span style={{ fontFamily: 'var(--font-dmsans)', fontSize: '12px', color: '#D97706', minWidth: '30px' }}>{item.unit}</span>
