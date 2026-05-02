@@ -38,6 +38,28 @@ export default function Home() {
           Staff enter par counts in 60 seconds using a PIN &mdash; no login, no app install.
           If anything&apos;s below par, your manager gets an email alert instantly.
         </p>
+
+        <div style={{
+          width: '100%',
+          maxWidth: '720px',
+          margin: '0 auto 40px',
+          aspectRatio: '16 / 9',
+          background: '#1C1917',
+          border: '1px solid #3D3832',
+          borderRadius: '12px',
+          overflow: 'hidden',
+        }}>
+          <video
+            src="/videos/par-tracker.mp4"
+            poster="/videos/par-tracker-poster.png"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </div>
+
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
           <a href="/login" style={{
             background: '#D97706', color: '#fff', padding: '14px 28px',
